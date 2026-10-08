@@ -8,19 +8,31 @@
 <body>
     <h1>Buffer Overflow Visualization</h1>
 
-    <div class="inputRow">
-        <label for="inputString">Enter a string:</label>
-        <input type="text" id="inputString">
-        <button id="submitBtn" class="submitBtn">Submit</button>
+    <div class="formGrid">
+        <div class="formRow">
+            <label for="inputString">Enter a string:</label>
+            <div class="formControls">
+                <input type="text" id="inputString">
+                <button id="submitBtn" class="submitBtn">Submit</button>
+                <button id="resetBtn" class="submitBtn resetBtn">Reset</button>
+            </div>
+        </div>
+
+        <div class="formRow">
+            <span class="bufferSizeLabel">Buffer size:</span>
+            <div class="formControls">
+                <div class="bufferSizeControls">
+                    <button id="decreaseBtn" class="sizeBtn">&minus;</button>
+                    <span id="bufferSizeValue">8</span>
+                    <button id="increaseBtn" class="sizeBtn">+</button>
+                </div>
+            </div>
+        </div>
     </div>
 
-    <div class="bufferSizeRow">
-        <span>Buffer size:</span>
-        <button id="decreaseBtn" class="sizeBtn">-</button>
-        <span id="bufferSizeValue"></span>
-        <button id="increaseBtn" class="sizeBtn">+</button>
-    </div>
+    <div id="overflowNote" class="overflowNote"></div>
 
+    <div id="stringLength" class="stringLength">String Length: 0</div>
     <div id="arrayDisplay"></div>
     <div id="stackDisplay"></div>
 

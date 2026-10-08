@@ -14,30 +14,60 @@ h1 {
     margin-bottom: 60px;
 }
 
-.inputRow {
-    text-align: center;
+.formGrid {
+    display: grid;
+    grid-template-columns: auto auto;
+    align-items: center;
+    column-gap: 16px;
+    row-gap: 20px;
+    width: fit-content;
+    margin: 0 auto;
+}
+
+.formRow {
+    display: contents;
+}
+
+.formRow label,
+.formRow .bufferSizeLabel {
     font-size: 1.5rem;
+    text-align: right;
 }
 
-.inputRow label {
-    margin-right: 10px;
+.bufferSizeLabel {
+    color: #c9d1d9;
 }
 
-.inputRow input,
-.inputRow button {
+.formControls {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.stringLength {
+    text-align: center;
+    margin-top: 40px;
+    margin-bottom: 4px;
+    font-size: 0.9rem;
+    color: #8b949e;
+    display: none;
+}
+
+.formGrid input,
+.formGrid button {
     font-family: inherit;
     font-size: 1.5rem;
     padding: 8px 16px;
     border-radius: 12px;
 }
 
-.inputRow input {
+.formGrid input {
     background-color: #161b22;
     color: #e6edf3;
     border: 1px solid #30363d;
 }
 
-.inputRow input:focus {
+.formGrid input:focus {
     outline: none;
     border-color: #238636;
 }
@@ -47,7 +77,6 @@ h1 {
     color: white;
     font-weight: bold;
     border: none;
-    border-radius: 12px;
     cursor: pointer;
     margin-left: 6px;
 }
@@ -56,42 +85,69 @@ h1 {
     background-color: #2ea043;
 }
 
-.bufferSizeRow {
+.resetBtn {
+    background-color: #1f6feb;
+}
+
+.resetBtn:hover {
+    background-color: #388bfd;
+}
+
+.overflowNote {
     text-align: center;
-    margin-top: 20px;
-    font-size: 1.1rem;
-    display: flex;
-    justify-content: center;
+    margin-top: 24px;
+    font-size: 1rem;
+    color: #e3b341;
+    display: none;
+}
+
+.overflowNote.error {
+    color: #f85149;
+}
+
+.bufferSizeControls {
+    display: inline-flex;
     align-items: center;
-    gap: 10px;
+    background-color: #161b22;
+    border: 1px solid #30363d;
+    border-radius: 10px;
+    overflow: hidden;
 }
 
 .sizeBtn {
     font-family: inherit;
-    font-size: 1.2rem;
-    width: 32px;
-    height: 32px;
-    border-radius: 8px;
-    border: 1px solid #30363d;
-    background-color: #161b22;
+    font-size: 1.1rem;
+    width: 36px;
+    height: 36px;
+    border: none;
+    background-color: transparent;
     color: #e6edf3;
     cursor: pointer;
+    transition: background-color 0.15s ease;
 }
 
 .sizeBtn:hover {
     background-color: #21262d;
 }
 
+.sizeBtn:active {
+    background-color: #30363d;
+}
+
 #bufferSizeValue {
-    width: 24px;
+    display: inline-block;
+    width: 36px;
     text-align: center;
+    border-left: 1px solid #30363d;
+    border-right: 1px solid #30363d;
+    padding: 8px 0;
 }
 
 #arrayDisplay {
     display: flex;
     justify-content: center;
     gap: 8px;
-    margin-top: 60px;
+    margin-top: 0;
 }
 
 .arrayCell {
