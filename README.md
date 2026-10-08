@@ -1,6 +1,7 @@
 # SE/CprE 4210 - Learning Sprint 2, Problem 1
 
-**Team:** Hacker Team 8
+**Team:** Hacker Team 8 (Sara Theriault)
+
 **Course:** SE/CprE 4210 (Software Security)
 
 ## Overview
